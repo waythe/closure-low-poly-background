@@ -2,6 +2,9 @@
 Generate low polygon background picture from a identifier string. Written in google closure. 
 
 # Usage
+
+	goog.require('wythe.lowpolybg')
+
 	// detail of options described in next segment
 	var options = {width:600, height:300,cellSize:45};
 
