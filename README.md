@@ -10,7 +10,7 @@ Generate low polygon background picture from a identifier string. Written in goo
 
 # Demo Result(Picture generated from 'HelloWorld'):
 
-	![image](https://github.com/waythe/closure-low-poly-background/raw/master/demo-result.png)
+![image](https://github.com/waythe/closure-low-poly-background/raw/master/demo-result.png)
 
 # Options
     width: 400, // Width of the generated canvas
