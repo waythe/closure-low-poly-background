@@ -2,13 +2,14 @@
 Generate low polygon background picture from a identifier string. Written in google closure. 
 
 # Usage
-// detail of options described in next segment
-var options = {width:600, height:300,cellSize:45};
-// 'Helloworld' is an identifier, pass different strings to generate different result
-var canvas = wythe.lowpolybg.createLowPolyCanvas('HelloWorld', options);
+	// detail of options described in next segment
+	var options = {width:600, height:300,cellSize:45};
+
+	// 'Helloworld' is an identifier, pass different strings to generate different result
+	var canvas = wythe.lowpolybg.createLowPolyCanvas('HelloWorld', options);
 
 Result:
- ![image](https://github.com/waythe/closure-low-poly-background/raw/master/demo-result.png)
+	![image](https://github.com/waythe/closure-low-poly-background/raw/master/demo-result.png)
 
 # Options
     width: 400, // Width of the generated canvas
@@ -20,5 +21,5 @@ Result:
     lineWidth: 1 // Line width of the triangles
 
 # Borrow from:
-https://github.com/ironwallaby/delaunay
-https://github.com/gka/chroma.js/blob/master/src/colors/colorbrewer.coffee
+	https://github.com/ironwallaby/delaunay
+	https://github.com/gka/chroma.js/blob/master/src/colors/colorbrewer.coffee
