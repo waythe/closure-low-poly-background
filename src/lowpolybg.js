@@ -119,14 +119,22 @@ wythe.lowpolybg.calcParams_ = function(identifier, opts) {
     params.indices = wythe.delaunay.triangulate(params.points);
     params.triangles = [];
     for (var index = 0; index < params.indices.length; index += 3) {
+		var vertices = [params.points[params.indices[index]], params.points[params.indices[index + 1]], params.points[params.indices[index + 2]]];
+		var gravityCenter = self.getGravityCenter_(vertices);
         params.triangles.push({
-            'vertices': [params.points[params.indices[index]], params.points[params.indices[index + 1]], params.points[params.indices[index + 2]]],
-            'color': self.calculateGradientColor_(params, params.points[params.indices[index]][0], params.points[params.indices[index]][1])
+            'vertices': vertices,
+            'color': self.calculateGradientColor_(params, gravityCenter[0], gravityCenter[1])
         })
     }
 
     this.params = params;
 };
+
+wythe.lowpolybg.getGravityCenter_ = function(vertices){
+	var x = goog.math.safeFloor((vertices[0][0] + vertices[1][0] + vertices[2][0])/3);
+	var y = goog.math.safeFloor((vertices[0][1] + vertices[1][1] + vertices[2][1])/3);
+	return [x, y];
+}
 
 wythe.lowpolybg.simpleHash_ = function(identifier) {
     var hashMethod = new goog.crypt.Md5();
