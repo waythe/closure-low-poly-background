@@ -5,10 +5,11 @@ Generate low polygon background picture from a identifier string. Written in goo
 	// detail of options described in next segment
 	var options = {width:600, height:300,cellSize:45};
 
-	// 'Helloworld' is an identifier, pass different strings to generate different result
+	// 'HelloWorld' is an identifier, pass different strings to generate different result
 	var canvas = wythe.lowpolybg.createLowPolyCanvas('HelloWorld', options);
 
-Result:
+# Demo Result(Picture generated from 'HelloWorld'):
+
 	![image](https://github.com/waythe/closure-low-poly-background/raw/master/demo-result.png)
 
 # Options
