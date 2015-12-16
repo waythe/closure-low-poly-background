@@ -57,20 +57,19 @@ wythe.lowpolybg.DEFAULT_PALETTE = {
 };
 
 wythe.lowpolybg.defaultOpts = {
-    width: 400, // Default width
-    height: 200, // Default height
-    cellSize: 30, // Size of the cells used to generate a randomized grid
-    variance: 0.75, // how much to randomize the grid
-    palette: wythe.lowpolybg.DEFAULT_PALETTE,
-    shareColor: true, // x and y share the same palette
-    seed: null, // Seed for the RNG
+    width: 400, // Width of the generated canvas
+    height: 200, // Height of the generated canvas
+    cellSize: 30, // Expect size of triangle blocks, actual size will be randomized by variance parameter
+    variance: 0.75, // Defined how much to randomize the block size
+    palette: wythe.lowpolybg.DEFAULT_PALETTE, // Palette of the canvas, this directly influence the generated result, by default we use ColorBrewer for chroma.js
+    shareColor: true, // If set to true, x and y will share the same palette. Recommend to keep it 'true', using different palette sometime will make the graph too messy.
     lineWidth: 1 // Line width of the triangles
 };
 
 wythe.lowpolybg.params = {};
 
-wythe.lowpolybg.createLowPolyCanvas = function(identifier, container, opts) {
-    this.calcParams_(identifier, container, opts);
+wythe.lowpolybg.createLowPolyCanvas = function(identifier, opts) {
+    this.calcParams_(identifier, opts);
     return this.drawTriangles_(this.params);
 };
 
@@ -98,13 +97,12 @@ wythe.lowpolybg.drawTriangles_ = function(params) {
     return canvas;
 };
 
-wythe.lowpolybg.calcParams_ = function(identifier, container, opts) {
+wythe.lowpolybg.calcParams_ = function(identifier, opts) {
     var self = this;
     var params = {};
     goog.object.extend(params, this.defaultOpts);
     goog.object.extend(params, opts);
     params.identifier = identifier;
-    params.container = container;
 
     // calculate characters from identifier string
     params.hash = this.simpleHash_(identifier);
@@ -116,10 +114,6 @@ wythe.lowpolybg.calcParams_ = function(identifier, container, opts) {
 	}
     params.seed = this.getSeedFromHash_(params.hash);
     params.rand = new goog.testing.PseudoRandom(params.seed);
-
-    // get width and height of the dom
-    params.width = goog.style.getSize(container).width;
-    params.height = goog.style.getSize(container).height;
 
     params.points = this.generatePoints_(params);
     params.indices = wythe.delaunay.triangulate(params.points);
