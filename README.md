@@ -1,6 +1,6 @@
 # Low Poly background image generator 
 
-(closure-low-poly-background)
+(closure-low-poly-background)  
 Generate low polygon background image from a identifier string.   
 Image's characters will be decided by the identifier string.  
 Written in google closure. 
