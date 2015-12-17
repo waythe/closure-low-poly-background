@@ -1,8 +1,8 @@
-closure-low-poly-background
-=============================
+# Low Poly background image generator 
 
-# Low Poly background picture generator
-Generate low polygon background picture from a identifier string. 
+(closure-low-poly-background)
+Generate low polygon background image from a identifier string.   
+Image's characters will be decided by the identifier string.  
 Written in google closure. 
 
 ### Usage ###
@@ -17,7 +17,7 @@ Written in google closure.
 	var canvas = wythe.lowpolybg.createLowPolyCanvas('HelloWorld', options);
 ```
 
-# Demo Result(Picture generated from 'HelloWorld'):
+### Demo Result(Picture generated from 'HelloWorld'): ###
 
 ![image](https://github.com/waythe/closure-low-poly-background/raw/master/demo-result.png)
 
