@@ -10,6 +10,14 @@ goog.require('goog.testing.PseudoRandom');
 goog.require('goog.crypt.Md5');
 goog.require('wythe.delaunay');
 
+/*
+ * lowpolybg.js
+ * closure-low-poly-background
+ * by wythe (https://github.com/waythe) (url is 'waythe' because 'wythe' is taken by other people)
+ *
+ * Licensed under Apache License Version 2.0
+ */
+
 wythe.lowpolybg.DEFAULT_PALETTE = {
     //Use the palette from ColorBrewer colors for chroma.js
 

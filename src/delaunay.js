@@ -1,5 +1,13 @@
 goog.provide('wythe.delaunay');
 
+/*
+ * delaunay.js
+ * closure-low-poly-background
+ * by wythe (https://github.com/waythe) (url is 'waythe' because 'wythe' is taken by other people)
+ * this is a wrapped version of https://github.com/ironwallaby/delaunay
+ * Licensed under Apache License Version 2.0
+ */
+
 wythe.delaunay.EPSILON = 1.0 / 1048576.0;
 wythe.delaunay.supertriangle_ = function(vertices) {
     var xmin = Number.POSITIVE_INFINITY,
