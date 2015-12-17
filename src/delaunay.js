@@ -138,13 +138,13 @@ wythe.delaunay.triangulate = function(vertices, key) {
     /* Next, find the vertices of the supertriangle (which contains all other
      * triangles), and append them onto the end of a (copy of) the vertex
      * array. */
-    st = this.supertriangle_(vertices);
+    st = wythe.delaunay.supertriangle_(vertices);
     vertices.push(st[0], st[1], st[2]);
 
     /* Initialize the open list (containing the supertriangle and nothing
      * else) and the closed list (which is empty since we havn't processed
      * any triangles yet). */
-    open = [this.circumcircle_(vertices, n + 0, n + 1, n + 2)];
+    open = [wythe.delaunay.circumcircle_(vertices, n + 0, n + 1, n + 2)];
     closed = [];
     edges = [];
 
@@ -181,13 +181,13 @@ wythe.delaunay.triangulate = function(vertices, key) {
         }
 
         /* Remove any doubled edges. */
-        this.dedup_(edges);
+        wythe.delaunay.dedup_(edges);
 
         /* Add a new triangle for each edge. */
         for (j = edges.length; j;) {
             b = edges[--j];
             a = edges[--j];
-            open.push(this.circumcircle_(vertices, a, b, c));
+            open.push(wythe.delaunay.circumcircle_(vertices, a, b, c));
         }
     }
 
