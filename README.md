@@ -37,5 +37,5 @@ Written in google closure.
 	https://github.com/ironwallaby/delaunay
 	https://github.com/gka/chroma.js/blob/master/src/colors/colorbrewer.coffee
 
-### License ### 
+### License ###
 Apache License Version 2.0
